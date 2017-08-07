@@ -11,14 +11,14 @@ class App extends Component {
     this.setColor = this.setColor.bind(this);
   }
 
-  setColor(e,color,lineWidth=1){
+  setColor(e,color,lineWidth=7){
     e.preventDefault();
     canvas(color, lineWidth);
   }  
 
-  componentDidMount() {
-    canvas("black",1);
-  }
+  // componentDidMount() {
+  //   canvas("yellow",3);
+  // }
  
   render() {
     return (

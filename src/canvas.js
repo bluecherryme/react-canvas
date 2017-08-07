@@ -1,6 +1,6 @@
 
 export default function canvas(x,y){
-
+//cssFilter
     // ctx.fillStyle = 'Green';
     // ctx.fillRect(300,200,200,100);
 
@@ -17,9 +17,8 @@ export default function canvas(x,y){
     
         canvas = document.getElementById('can');
         ctx = canvas.getContext("2d");
-        console.log('ctx',ctx);
-        var w = canvas.width;
-        var h = canvas.height;
+        // var w = canvas.width;
+        // var h = canvas.height;
     
         canvas.addEventListener("mousemove", function (e) {
             findxy('move', e)
@@ -39,6 +38,8 @@ export default function canvas(x,y){
         ctx.moveTo(prevX, prevY);
         ctx.lineTo(currX, currY);
         ctx.strokeStyle = x;
+        ctx.imageSmoothingQuality='high';
+        console.log('first', ctx);
         ctx.lineWidth = y;
         ctx.stroke();
         ctx.closePath();
@@ -57,6 +58,8 @@ export default function canvas(x,y){
                 ctx.beginPath();
                 ctx.fillStyle = x;
                 ctx.fillRect(currX, currY, 2, 2);
+                ctx.imageSmoothingQuality='high';
+                console.log('second',ctx);
                 ctx.closePath();
                 dot_flag = false;
             }
@@ -79,7 +82,7 @@ export default function canvas(x,y){
 
 export function save() {
         let canvas = document.getElementById('can');
-        console.log(canvas.toDataURL());
+        console.log(canvas.toDataURL().length);
         document.getElementById("canvasimg").style.border = "2px solid";
         var dataURL = canvas.toDataURL();
         document.getElementById("canvasimg").src = dataURL;

@@ -1,8 +1,5 @@
 
 export default function canvas(x,y){
-    
-    // var canvas = document.getElementById('myCanvas');
-    // var ctx = canvas.getContext('2d');
 
     // ctx.fillStyle = 'Green';
     // ctx.fillRect(300,200,200,100);
@@ -46,15 +43,7 @@ export default function canvas(x,y){
         ctx.stroke();
         ctx.closePath();
     }
-    
-    function erase() {
-        var m = window.confirm("Want to clear");
-        if (m) {
-            ctx.clearRect(0, 0, w, h);
-            document.getElementById("canvasimg").style.display = "none";
-        }
-    }
-        
+           
     function findxy(res, e) {
         if (res === 'down') {
             prevX = currX;
@@ -97,31 +86,14 @@ export function save() {
         document.getElementById("canvasimg").style.display = "inline";
     }
 
-// export function color(obj) {
-//         switch (obj.id) {
-//             case "green":
-//                 x = "green";
-//                 break;
-//             case "blue":
-//                 x = "blue";
-//                 break;
-//             case "red":
-//                 x = "red";
-//                 break;
-//             case "yellow":
-//                 x = "yellow";
-//                 break;
-//             case "orange":
-//                 x = "orange";
-//                 break;
-//             case "black":
-//                 x = "black";
-//                 break;
-//             case "white":
-//                 x = "white";
-//                 break;
-//         }
-//         if (x === "white") y = 14;
-//         else y = 2;
-    
-//     }
+export function erase() {
+        let canvas = document.getElementById('can');
+        let ctx = canvas.getContext("2d");
+        var m = window.confirm("Want to clear");
+        var w = canvas.width;
+        var h = canvas.height;
+        if (m) {
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+        }
+    }

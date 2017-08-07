@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import canvas from './canvas';
 import './App.css';
-import {save} from './canvas';
+import {save, erase} from './canvas';
 
 class App extends Component {
 
@@ -38,7 +38,7 @@ class App extends Component {
               
               <div className='eraser'>Eraser</div>
               <button onClick={()=>save()}>Save</button>
-              <button>Clear</button>
+              <button onClick={()=>erase()}>Clear</button>
               <img id="canvasimg" alt='' />
           </div>
 

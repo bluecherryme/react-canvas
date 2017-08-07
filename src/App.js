@@ -11,14 +11,14 @@ class App extends Component {
     this.setColor = this.setColor.bind(this);
   }
 
-  setColor(e,color,lineWidth=7){
+  setColor(e,color,lineWidth=1){
     e.preventDefault();
     canvas(color, lineWidth);
   }  
 
-  // componentDidMount() {
-  //   canvas("yellow",3);
-  // }
+  componentDidMount() {
+    canvas("black",1);
+  }
  
   render() {
     return (
@@ -27,10 +27,10 @@ class App extends Component {
         
           <div>
               <div className='choose'>Choose Color
-                <div id="green" onClick={(e)=>this.setColor(e,'green')}></div>
+                <div  id="green" onClick={(e)=>this.setColor(e,'green')}></div>
                 <div  id="blue" onClick={(e)=>this.setColor(e,'blue')}></div>
                 <div  id="red" onClick={(e)=>this.setColor(e,'red')}></div>
-                <div id="yellow" onClick={(e)=>this.setColor(e,'yellow')}></div>
+                <div  id="yellow" onClick={(e)=>this.setColor(e,'yellow')}></div>
                 <div  id="orange" onClick={(e)=>this.setColor(e,'orange')}></div>
                 <div  id="black" onClick={(e)=>this.setColor(e,'black')}></div>
                 <div  id="white"onClick={(e)=>this.setColor(e,'white',20)}></div>
@@ -39,6 +39,7 @@ class App extends Component {
               <div className='eraser'>Eraser</div>
               <button onClick={()=>save()}>Save</button>
               <button onClick={()=>erase()}>Clear</button>
+              <button id="rect">Rectangle</button>
               <img id="canvasimg" alt='' />
           </div>
 

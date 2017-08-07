@@ -1,8 +1,6 @@
 
 export default function canvas(x,y){
 //cssFilter
-    // ctx.fillStyle = 'Green';
-    // ctx.fillRect(300,200,200,100);
 
     // ctx.fillStyle = 'Blue';
     // ctx.arc(100,100,50,0,2*Math.PI,false);
@@ -19,7 +17,7 @@ export default function canvas(x,y){
         ctx = canvas.getContext("2d");
         // var w = canvas.width;
         // var h = canvas.height;
-    
+  
         canvas.addEventListener("mousemove", function (e) {
             findxy('move', e)
         }, false);
@@ -38,9 +36,9 @@ export default function canvas(x,y){
         ctx.moveTo(prevX, prevY);
         ctx.lineTo(currX, currY);
         ctx.strokeStyle = x;
-        ctx.imageSmoothingQuality='high';
         console.log('first', ctx);
         ctx.lineWidth = y;
+        ctx.miterLimit = y;
         ctx.stroke();
         ctx.closePath();
     }
